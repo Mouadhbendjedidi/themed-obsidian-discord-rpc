@@ -1,6 +1,7 @@
 import { PluginSettingTab, Setting, TFile } from "obsidian";
 import { Logger } from "src/logger";
 import ObsidianDiscordRPC from "src/main";
+import { ThemeStyle, PluginState } from './settings';
 
 export class DiscordRPCSettingsTab extends PluginSettingTab {
   public logger: Logger = new Logger();
@@ -174,6 +175,27 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
           plugin.statusBar.displayState(plugin.getState(), plugin.settings.autoHideStatusBar);
         });
       });
+
+      new Setting(containerEl)
+          .setName('Theme Style')
+          .setDesc('Choose the theme style for Discord Rich Presence')
+          .addDropdown(dropdown => dropdown
+              .addOption(ThemeStyle.Latte, 'Latte')
+              .addOption(ThemeStyle.Frappe, 'Frappe')
+              .addOption(ThemeStyle.Macchiato, 'Macchiato')
+              .addOption(ThemeStyle.Mocha, 'Mocha')
+              .setValue(plugin.settings.themeStyle)
+              .onChange(async (value) => {
+                  plugin.settings.themeStyle = value as ThemeStyle;
+                  await plugin.saveData(plugin.settings);
+                  if (plugin.getState() === PluginState.connected) {
+                      await plugin.setActivity(
+                          plugin.app.vault.getName(),
+                          plugin.currentFile?.basename ?? "...",
+                          plugin.currentFile?.extension ?? ""
+                      );
+                  }
+              }));
 
     containerEl.createEl("h3", { text: "Startup Settings" });
     new Setting(containerEl)

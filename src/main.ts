@@ -72,14 +72,17 @@ export default class ObsidianDiscordRPC extends Plugin {
     if (this.settings.connectOnStart) {
       await this.connectDiscord();
 
-      let activeLeaf = this.app.workspace.activeLeaf;
-      let files: TFile[] = this.app.vault.getMarkdownFiles();
+      const activeLeaf = this.app.workspace.activeLeaf;
+      const files: TFile[] = this.app.vault.getMarkdownFiles();
 
-      files.forEach((file) => {
-        if (file.basename === activeLeaf.getDisplayText()) {
-          this.onFileOpen(file);
-        }
-      });
+      if (activeLeaf) {
+        const displayText = activeLeaf.getDisplayText();
+        files.forEach((file) => {
+          if (file.basename === displayText) {
+            this.onFileOpen(file);
+          }
+        });
+      }
     } else {
       this.setState(PluginState.disconnected);
       this.statusBar.displayState(
@@ -131,7 +134,7 @@ export default class ObsidianDiscordRPC extends Plugin {
 
     try {
       await this.rpc.login({
-        clientId: "763813185022197831",
+        clientId: "1352970439684657152",
       });
       await this.setActivity(this.app.vault.getName(), "...", "");
     } catch (error) {
@@ -188,7 +191,7 @@ export default class ObsidianDiscordRPC extends Plugin {
           details: `Editing Notes`,
           state: `Working in a Vault`,
           startTimestamp: date,
-          largeImageKey: "logo",
+          largeImageKey: this.settings.themeStyle,
           largeImageText: "Obsidian",
         });
       } else if (
@@ -199,27 +202,27 @@ export default class ObsidianDiscordRPC extends Plugin {
           details: `Editing ${file}`,
           state: `Vault: ${vault}`,
           startTimestamp: date,
-          largeImageKey: "logo",
+          largeImageKey: this.settings.themeStyle,
           largeImageText: "Obsidian",
         });
       } else if (this.settings.showVaultName) {
         await this.rpc.setActivity({
           state: `Vault: ${vault}`,
           startTimestamp: date,
-          largeImageKey: "logo",
+          largeImageKey: this.settings.themeStyle,
           largeImageText: "Obsidian",
         });
       } else if (this.settings.showCurrentFileName) {
         await this.rpc.setActivity({
           details: `Editing ${file}`,
           startTimestamp: date,
-          largeImageKey: "logo",
+          largeImageKey: this.settings.themeStyle,
           largeImageText: "Obsidian",
         });
       } else {
         await this.rpc.setActivity({
           startTimestamp: date,
-          largeImageKey: "logo",
+          largeImageKey: this.settings.themeStyle,
           largeImageText: "Obsidian",
         });
       }
