@@ -1,0 +1,31 @@
+{
+	"name": "obsidian-sample-plugin",
+	"version": "1.0.0",
+	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^15.1.0",
+		"@rollup/plugin-json": "^4.1.0",
+		"@rollup/plugin-node-resolve": "^9.0.0",
+		"@rollup/plugin-typescript": "^6.1.0",
+		"@types/node": "^14.18.54",
+		"obsidian": "latest",
+		"rollup": "^2.79.1",
+		"rollup-plugin-copy": "^3.4.0",
+		"standard-version": "^9.5.0",
+		"tslib": "^2.6.1",
+		"typescript": "^4.9.5"
+	},
+	"dependencies": {
+		"discord-rpc": "^4.0.1",
+		"@types/discord-rpc": "^4.0.9"
+	}
+}
