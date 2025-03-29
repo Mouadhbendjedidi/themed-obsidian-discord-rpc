@@ -28,7 +28,7 @@ Enhance your Discord experience by displaying rich details about your Obsidian w
 - 🎭 **Support for themes and icons**
 - ⚡ **Lightweight and optimized**
 
-## Supported Themes
+## Supported Themes 🎨
 - Catppuccin
 More in the future!
 
