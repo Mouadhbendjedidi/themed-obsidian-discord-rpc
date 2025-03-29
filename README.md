@@ -37,7 +37,7 @@ More in the future!
 ### Manual Installation
 
 1. Download the latest release from [GitHub Releases](https://github.com/your-repo/releases).
-2. Extract and move the folder to `\.obsidian\plugins\discord-rpc`.
+2. Extract and move the folder to `\.obsidian\plugins\themed-obsidian-discord-rpc`.
 3. Enable it in **Settings → Community Plugins**.
 
 ### From Obsidian Community Plugins
