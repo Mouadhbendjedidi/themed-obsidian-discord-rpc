@@ -1,9 +1,9 @@
 {
-	"id": "themed-obsidian-discord-rpc",
-	"name": "Themed Obsidian Discord RPC",
+	"id": "themed-discord-rpc",
+	"name": "Themed Discord RPC",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "A Customizable Obsidian discord RPC",
+	"description": "A Customizable discord RPC",
 	"author": "Mouadhbendjedidi",
 	"authorUrl": "https://github.com/Mouadhbendjedidi",
 	"isDesktopOnly": true
