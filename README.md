@@ -1,65 +1,82 @@
-<h3 align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Catppuccin for <a href="https://github.com/catppuccin/template">App</a>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
-</h3>
+
+
+
+# Obsidian Discord RPC
 
 <p align="center">
-	<a href="https://github.com/catppuccin/template/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/template?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/catppuccin/template/issues"><img src="https://img.shields.io/github/issues/catppuccin/template?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/catppuccin/template/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/template?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/catppuccin/template/issues"><img src="https://img.shields.io/github/issues/catppuccin/template?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 	<a href="https://github.com/catppuccin/template/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/template?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
+
+A customizable **Discord Rich Presence (RPC) plugin** for Obsidian, allowing you to showcase your notes, vault, and current activity directly on your Discord profile. Tailored for power users who love personalization and aesthetics.
+
+## Preview 🖼️ 
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/preview.webp"/>
 </p>
 
-## Previews
+## Features ✨
 
-<details>
-<summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/latte.webp"/>
-</details>
-<details>
-<summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/frappe.webp"/>
-</details>
-<details>
-<summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/macchiato.webp"/>
-</details>
-<details>
-<summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/mocha.webp"/>
-</details>
+Enhance your Discord experience by displaying rich details about your Obsidian workflow directly on your profile. Whether you're taking notes, organizing ideas, or working on projects, this plugin keeps your presence dynamic and informative.
 
-## Usage
+- 📝 **Displays active note title**
+- 📂 **Shows vault name**
+- ⏳ **Elapsed session time**
+- 🎨 **Customizable status messages**
+- 🎭 **Support for themes and icons**
+- ⚡ **Lightweight and optimized**
 
-1. Download the flavor of your choice.
-2. Open the app and go to **Preferences** > **Appearance** > **Import theme**.
-3. Select the downloaded flavor file.
+## Installation 📥
 
-<!-- The FAQ section is optional. Remove if needed.-->
-## 🙋 FAQ
+### Manual Installation
 
-- Q: **_"How can I do X?"_**\
-  A: ...
+1. Download the latest release from [GitHub Releases](https://github.com/your-repo/releases).
+2. Extract and move the folder to `\.obsidian\plugins\discord-rpc`.
+3. Enable it in **Settings → Community Plugins**.
 
-## 💝 Thanks to
+### From Obsidian Community Plugins
 
-- [Human](https://github.com/catppuccin)
+1. Open **Settings → Community Plugins**.
+2. Search for **Obsidian Discord RPC**.
+3. Click **Install** and **Enable**.
 
-&nbsp;
+## Configuration ⚙️
 
-<p align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
-</p>
+Head over to **Settings → Discord RPC** to:
 
-<p align="center">
-	Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
-</p>
+- Toggle different presence modes.
+- Customize status messages.
+- Change time display preferences.
 
-<p align="center">
-	<a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
-</p>
+## How to Contribute 🤝
+
+[Check out our contributing guide](https://github.com/your-repo/CONTRIBUTING.md) to get started!
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature-name`)
+3. **Commit your changes** (`git commit -m 'Added a cool feature'`)
+4. **Push to GitHub** (`git push origin feature-name`)
+5. **Submit a Pull Request** 🚀
+
+## Community & Support 💬
+
+Join the discussion and get support:
+
+- 💬 **Discord:** [Join here](https://discord.gg/your-invite-link)
+- 📝 **GitHub Discussions:** [Start a thread](https://github.com/your-repo/discussions)
+- 🐛 **Report an Issue:** [Open an issue](https://github.com/your-repo/issues)
+
+## License 📝
+
+MIT License. See [`LICENSE`](https://github.com/your-repo/LICENSE) for details.
+
+## Credits 💙
+
+Built with 💻 and ☕ by **Mouadh**.
+
+---
+
+### ⭐ If you love this plugin, consider starring the repo!
+
