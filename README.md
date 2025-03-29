@@ -46,7 +46,7 @@ Enhance your Discord experience by displaying rich details about your Obsidian w
 
 Head over to **Settings → Discord RPC** to:
 
-- Toggle different presence modes.
+- Toggle different Themes.
 - Customize status messages.
 - Change time display preferences.
 
