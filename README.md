@@ -14,7 +14,7 @@ A customizable **Discord Rich Presence (RPC) plugin** for Obsidian, allowing you
 ## Preview 🖼️ 
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/preview.webp"/>
+	<img src="https://raw.githubusercontent.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/main/assets/Preview.png"/>
 </p>
 
 ## Features ✨
