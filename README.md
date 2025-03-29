@@ -71,10 +71,6 @@ Join the discussion and get support:
 - 📝 **GitHub Discussions:** [Start a thread](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/discussions)
 - 🐛 **Report an Issue:** [Open an issue](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/issues)
 
-## License 📝
-
-MIT License. See [`LICENSE`](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/LICENSE) for details.
-
 ## Credits 💙
 
 Built with 💻 and ☕ by **Mouadh**.
