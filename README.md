@@ -4,9 +4,9 @@
 # Obsidian Discord RPC
 
 <p align="center">
-	<a href="https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/template?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
-	<a href="https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/issues"><img src="https://img.shields.io/github/issues/catppuccin/template?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
-	<a href="https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/template?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/stargazers"><img src="https://img.shields.io/github/stars/Mouadhbendjedidi/themed-obsidian-discord-rpc?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/issues"><img src="https://img.shields.io/github/issues/Mouadhbendjedidi/themed-obsidian-discord-rpc?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/contributors"><img src="https://img.shields.io/github/contributors/Mouadhbendjedidi/themed-obsidian-discord-rpc?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 A customizable **Discord Rich Presence (RPC) plugin** for Obsidian, allowing you to showcase your notes, vault, and current activity directly on your Discord profile. Tailored for power users who love personalization and aesthetics.
