@@ -64,13 +64,12 @@ Head over to **Settings → Discord RPC** to:
 
 Join the discussion and get support:
 
-- 💬 **Discord:** [Join here](https://discord.gg/your-invite-link)
-- 📝 **GitHub Discussions:** [Start a thread](https://github.com/your-repo/discussions)
-- 🐛 **Report an Issue:** [Open an issue](https://github.com/your-repo/issues)
+- 📝 **GitHub Discussions:** [Start a thread](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/discussions)
+- 🐛 **Report an Issue:** [Open an issue](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/issues)
 
 ## License 📝
 
-MIT License. See [`LICENSE`](https://github.com/your-repo/LICENSE) for details.
+MIT License. See [`LICENSE`](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/LICENSE) for details.
 
 ## Credits 💙
 
