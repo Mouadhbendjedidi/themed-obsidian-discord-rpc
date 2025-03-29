@@ -3,9 +3,8 @@
 	"name": "Themed Obsidian Discord RPC",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Soothing pastel theme plugin for discord RPC",
-	"author": "Catppuccin",
-	"authorUrl": "https://catppuccin.com",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "A Customizable Obsidian discord RPC",
+	"author": "Mouadhbendjedidi",
+	"authorUrl": "https://github.com/Mouadhbendjedidi",
 	"isDesktopOnly": true
 }
