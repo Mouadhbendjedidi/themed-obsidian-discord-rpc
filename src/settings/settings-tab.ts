@@ -1,14 +1,21 @@
-import { PluginSettingTab, Setting, TFile } from "obsidian";
+import { PluginSettingTab, Setting, TFile, App } from "obsidian";
 import { Logger } from "src/logger";
 import ObsidianDiscordRPC from "src/main";
 import { ThemeStyle, PluginState } from './settings';
 
 export class DiscordRPCSettingsTab extends PluginSettingTab {
-  public logger: Logger = new Logger();
+  public logger: Logger;
+  private plugin: ObsidianDiscordRPC;
+
+  constructor(app: App, plugin: ObsidianDiscordRPC) {
+    super(app, plugin);
+    this.plugin = plugin;
+    this.logger = new Logger(plugin);
+  }
 
   display(): void {
     let { containerEl } = this;
-    const plugin: ObsidianDiscordRPC = (this as any).plugin;
+    const plugin = this.plugin;  // Use the properly typed property instead of casting
 
     containerEl.empty();
     containerEl.createEl("h2", { text: "Discord Rich Presence Settings" });
