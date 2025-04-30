@@ -18,28 +18,21 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
     const plugin = this.plugin;  // Use the properly typed property instead of casting
 
     containerEl.empty();
-    containerEl.createEl("h2", { text: "Discord Rich Presence Settings" });
 
-    containerEl.createEl("h3", { text: "Vault Name Settings" });
+    containerEl.createEl("h3", { text: "Vault Name" });
     new Setting(containerEl)
-      .setName("Privacy Mode")
+      .setName("Privacy mode")
       .setDesc("Enable this to hide the name of the vault and Hide file names")
       .addToggle((boolean) =>
         boolean.setValue(plugin.settings.privacyMode).onChange((value) => {
           plugin.settings.privacyMode = value;
           plugin.saveData(plugin.settings);
 
-          if (boolean.getValue()) {
-            this.logger.logIgnoreNoNotice("Privacy Mode Enabled");
-          } else {
-            this.logger.logIgnoreNoNotice("Privacy Mode Disabled");
-          }
-
           plugin.setActivity("", "", "");
         })
       );
     new Setting(containerEl)
-      .setName("Show Vault Name")
+      .setName("Show vault name")
       .setDesc(
         "Enable this to show the name of the vault you are working with."
       )
@@ -47,12 +40,6 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         boolean.setValue(plugin.settings.showVaultName).onChange((value) => {
           plugin.settings.showVaultName = value;
           plugin.saveData(plugin.settings);
-
-          if (boolean.getValue()) {
-            this.logger.logIgnoreNoNotice("Vault Name is now Visible");
-          } else {
-            this.logger.logIgnoreNoNotice("Vault Name is no longer Visible");
-          }
 
           plugin.setActivity(
             this.app.vault.getName(),
@@ -63,7 +50,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
       );
 
     new Setting(containerEl)
-      .setName("Set Custom Vault Name")
+      .setName("Set custom vault name")
       .setDesc(
         "Change the vault name shown publicly. Leave blank to use your actual vault name."
       )
@@ -80,9 +67,9 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         })
       );
 
-    containerEl.createEl("h3", { text: "File Name Settings" });
+    containerEl.createEl("h3", { text: "File Name" });
     new Setting(containerEl)
-      .setName("Show Current File Name")
+      .setName("Show current file name")
       .setDesc("Enable this to show the name of the file you are working on.")
       .addToggle((boolean) =>
         boolean
@@ -90,12 +77,6 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
           .onChange((value) => {
             plugin.settings.showCurrentFileName = value;
             plugin.saveData(plugin.settings);
-
-            if (boolean.getValue()) {
-              this.logger.logIgnoreNoNotice("File Name is now Visable");
-            } else {
-              this.logger.logIgnoreNoNotice("File Name is no longer Visable");
-            }
 
             plugin.setActivity(
               this.app.vault.getName(),
@@ -106,7 +87,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
       );
 
     new Setting(containerEl)
-      .setName("Show File Extension")
+      .setName("Show file extension")
       .setDesc("Enable this to show file extension.")
       .addToggle((boolean) =>
         boolean
@@ -123,9 +104,9 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
           })
       );
 
-    containerEl.createEl("h3", { text: "Time Settings" });
+    containerEl.createEl("h3", { text: "Time tracking" });
     new Setting(containerEl)
-      .setName("Use Obsidian Total Time")
+      .setName("Use obsidian total time")
       .setDesc(
         "Enable to use the total time you have been using Obsidian, instead of the time spent editing a single file."
       )
@@ -142,9 +123,9 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "Status Bar Settings" });
+    containerEl.createEl("h3", { text: "Status Bar" });
     new Setting(containerEl)
-      .setName("Automatically hide Status Bar")
+      .setName("Automatically hide status bar")
       .setDesc(
         "Automatically hide status bar after successfully connecting to Discord."
       )
@@ -164,7 +145,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
       });
     
       new Setting(containerEl)
-      .setName("Show Connected Time")
+      .setName("Show connected time")
       .setDesc(
         "Show time spent editing file or time connected to Discord in the status bar."
       )
@@ -183,9 +164,9 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "Startup Settings" });
+    containerEl.createEl("h3", { text: "Startup Behavior" });
     new Setting(containerEl)
-      .setName("Automatically Connect to Discord")
+      .setName("Automatically connect to discord")
       .setDesc(
         "Automatically connect to Discord on startup. You can always click the status bar to manually connect."
       )
@@ -202,20 +183,14 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "Notice Settings" });
+    containerEl.createEl("h3", { text: "Notices" });
     new Setting(containerEl)
-      .setName("Show Notices")
+      .setName("Show notices")
       .setDesc("Enable this to show connection Notices.")
       .addToggle((boolean) =>
         boolean.setValue(plugin.settings.showPopups).onChange((value) => {
           plugin.settings.showPopups = value;
           plugin.saveData(plugin.settings);
-
-          if (boolean.getValue()) {
-            this.logger.logIgnoreNoNotice("Notices Enabled");
-          } else {
-            this.logger.logIgnoreNoNotice("Notices Disabled");
-          }
 
           plugin.setActivity(
             this.app.vault.getName(),
@@ -224,9 +199,9 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
           );
         })
       );
-      containerEl.createEl("h3", { text: "Theme Settings" });
+      containerEl.createEl("h3", { text: "Theme Style" });
       new Setting(containerEl)
-          .setName('Theme Style')
+          .setName('Theme style')
           .setDesc('Choose the theme style for Discord Rich Presence')
           .addDropdown(dropdown => dropdown
               .addOption(ThemeStyle.Latte, 'Latte')

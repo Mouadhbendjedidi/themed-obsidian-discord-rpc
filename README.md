@@ -1,7 +1,4 @@
-
-
-
-# Obsidian Discord RPC
+# Themed Discord RPC
 
 <p align="center">
 	<a href="https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/stargazers"><img src="https://img.shields.io/github/stars/Mouadhbendjedidi/themed-obsidian-discord-rpc?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
