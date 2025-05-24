@@ -19,7 +19,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
 
     containerEl.empty();
 
-    containerEl.createEl("h3", { text: "Vault Name" });
+    new Setting(containerEl).setName('Vault name').setHeading();
     new Setting(containerEl)
       .setName("Privacy mode")
       .setDesc("Enable this to hide the name of the vault and Hide file names")
@@ -67,7 +67,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         })
       );
 
-    containerEl.createEl("h3", { text: "File Name" });
+    new Setting(containerEl).setName('File name').setHeading();
     new Setting(containerEl)
       .setName("Show current file name")
       .setDesc("Enable this to show the name of the file you are working on.")
@@ -104,7 +104,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
           })
       );
 
-    containerEl.createEl("h3", { text: "Time tracking" });
+    new Setting(containerEl).setName('Time tracking').setHeading();
     new Setting(containerEl)
       .setName("Use obsidian total time")
       .setDesc(
@@ -123,7 +123,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "Status Bar" });
+    new Setting(containerEl).setName('Status bar').setHeading();
     new Setting(containerEl)
       .setName("Automatically hide status bar")
       .setDesc(
@@ -164,9 +164,9 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "Startup Behavior" });
+    new Setting(containerEl).setName('Startup behavior').setHeading();
     new Setting(containerEl)
-      .setName("Automatically connect to discord")
+      .setName("Automatically connect to Discord")
       .setDesc(
         "Automatically connect to Discord on startup. You can always click the status bar to manually connect."
       )
@@ -183,7 +183,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         });
       });
 
-    containerEl.createEl("h3", { text: "Notices" });
+    new Setting(containerEl).setName('Notices').setHeading();
     new Setting(containerEl)
       .setName("Show notices")
       .setDesc("Enable this to show connection Notices.")
@@ -199,7 +199,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
           );
         })
       );
-      containerEl.createEl("h3", { text: "Theme Style" });
+      new Setting(containerEl).setName('Theme style').setHeading();
       new Setting(containerEl)
           .setName('Theme style')
           .setDesc('Choose the theme style for Discord Rich Presence')

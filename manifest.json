@@ -3,7 +3,7 @@
 	"name": "Themed Discord RPC",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "A Customizable discord RPC",
+	"description": "A Customizable Discord RPC",
 	"author": "Mouadhbendjedidi",
 	"authorUrl": "https://github.com/Mouadhbendjedidi",
 	"isDesktopOnly": true
