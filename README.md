@@ -45,7 +45,7 @@ More in the future!
 
 ## Configuration ⚙️
 
-Head over to **Settings → Discord RPC** to:
+Head over to **Settings → Themed Discord RPC** to:
 
 - Toggle different Themes.
 - Customize status messages.
