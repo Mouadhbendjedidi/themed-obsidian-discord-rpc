@@ -40,7 +40,7 @@ More in the future!
 ### From Obsidian Community Plugins
 
 1. Open **Settings → Community Plugins**.
-2. Search for **Obsidian Discord RPC**.
+2. Search for **Themed Discord RPC**.
 3. Click **Install** and **Enable**.
 
 ## Configuration ⚙️
@@ -53,7 +53,7 @@ Head over to **Settings → Themed Discord RPC** to:
 
 ## How to Contribute 🤝
 
-[Check out our contributing guide](https://github.com/your-repo/CONTRIBUTING.md) to get started!
+[Check out our contributing guide](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/CONTRIBUTING.md) to get started!
 
 1. **Fork the repository**
 2. **Create a feature branch** (`git checkout -b feature-name`)
