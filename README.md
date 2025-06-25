@@ -28,6 +28,7 @@ Enhance your Discord experience by displaying rich details about your Obsidian w
 ## Supported Themes 🎨
 - Default (New & Old)
 - Catppuccin
+
 More in the future!
 
 ## Installation 📥
