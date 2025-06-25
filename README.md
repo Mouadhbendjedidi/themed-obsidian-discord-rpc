@@ -76,5 +76,7 @@ Built with 💻 and ☕ by **Mouadh**.
 
 ---
 
-### ⭐ If you love this plugin, consider starring the repo!
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Mouadhbendjedidi/themed-obsidian-discord-rpc&type=Date)](https://www.star-history.com/#Mouadhbendjedidi/themed-obsidian-discord-rpc&Date)
 
