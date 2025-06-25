@@ -9,7 +9,7 @@ export class DiscordRPCSettings {
   connectOnStart: boolean = true;
   autoHideStatusBar: boolean = true;
   privacyMode: boolean = false;
-  themeStyle: ThemeStyle = ThemeStyle.Latte;
+  themeStyle: ThemeStyle = ThemeStyle.Default_new_dark;
 }
 
 export enum PluginState {
@@ -19,6 +19,10 @@ export enum PluginState {
 }
 
 export enum ThemeStyle {
+  Default_dark = "default-old-dark",
+  Default_light = "default-old-light",
+  Default_new_dark = "default-new-dark",
+  Default_new_light = "default-new-light",
   Latte = "latte",
   Frappe = "frappe",
   Macchiato = "macchiato",

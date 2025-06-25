@@ -204,6 +204,10 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
           .setName('Theme style')
           .setDesc('Choose the theme style for Discord Rich Presence')
           .addDropdown(dropdown => dropdown
+              .addOption(ThemeStyle.Default_dark, 'Default Dark (Old)')
+              .addOption(ThemeStyle.Default_light, 'Default Light (Old)')
+              .addOption(ThemeStyle.Default_new_dark, 'Default Dark (New)')
+              .addOption(ThemeStyle.Default_new_light, 'Default Light (New)')
               .addOption(ThemeStyle.Latte, 'Catppuccin Latte')
               .addOption(ThemeStyle.Frappe, 'Catppuccin Frappe')
               .addOption(ThemeStyle.Macchiato, 'Catppuccin Macchiato')
