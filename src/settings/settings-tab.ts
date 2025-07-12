@@ -208,10 +208,10 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
               .addOption(ThemeStyle.Default_light, 'Default Light (Old)')
               .addOption(ThemeStyle.Default_new_dark, 'Default Dark (New)')
               .addOption(ThemeStyle.Default_new_light, 'Default Light (New)')
-              .addOption(ThemeStyle.Latte, 'Catppuccin Latte')
-              .addOption(ThemeStyle.Frappe, 'Catppuccin Frappe')
-              .addOption(ThemeStyle.Macchiato, 'Catppuccin Macchiato')
-              .addOption(ThemeStyle.Mocha, 'Catppuccin Mocha')
+              .addOption(ThemeStyle.Catppuccin_Latte, 'Catppuccin Latte')
+              .addOption(ThemeStyle.Catppuccin_Frappe, 'Catppuccin Frappe')
+              .addOption(ThemeStyle.Catppuccin_Macchiato, 'Catppuccin Macchiato')
+              .addOption(ThemeStyle.Catppuccin_Mocha, 'Catppuccin Mocha')
               .setValue(plugin.settings.themeStyle)
               .onChange(async (value) => {
                   plugin.settings.themeStyle = value as ThemeStyle;
