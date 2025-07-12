@@ -23,8 +23,8 @@ export enum ThemeStyle {
   Default_light = "default-old-light",
   Default_new_dark = "default-new-dark",
   Default_new_light = "default-new-light",
-  Latte = "latte",
-  Frappe = "frappe",
-  Macchiato = "macchiato",
-  Mocha = "mocha"
+  Catppuccin_Latte = "latte",
+  Catppuccin_Frappe = "frappe",
+  Catppuccin_Macchiato = "macchiato",
+  Catppuccin_Mocha = "mocha"
 }
