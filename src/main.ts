@@ -192,7 +192,7 @@ export default class ObsidianDiscordRPC extends Plugin {
           state: `Working in a Vault`,
           startTimestamp: date,
           largeImageKey: this.settings.themeStyle,
-          largeImageText: "Obsidian",
+          largeImageText: "no info just privacy mode",
         });
       } else if (
         this.settings.showVaultName &&
@@ -203,7 +203,7 @@ export default class ObsidianDiscordRPC extends Plugin {
           state: `Vault: ${vault}`,
           startTimestamp: date,
           largeImageKey: this.settings.themeStyle,
-          largeImageText: "Obsidian",
+          largeImageText: "I'm thinking!",
         });
       } else if (this.settings.showVaultName) {
         await this.rpc.setActivity({
@@ -217,7 +217,7 @@ export default class ObsidianDiscordRPC extends Plugin {
           details: `Editing ${file}`,
           startTimestamp: date,
           largeImageKey: this.settings.themeStyle,
-          largeImageText: "Obsidian",
+          largeImageText: "I'm thinking!",
         });
       } else {
         await this.rpc.setActivity({

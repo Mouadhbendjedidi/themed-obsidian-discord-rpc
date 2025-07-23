@@ -28,7 +28,7 @@ export class StatusBar {
   }
 
   displayConnected(timeout: number) {
-    this.statusBarEl.setText(`\u{1F30D} Connected to Discord`);
+    this.statusBarEl.setText(`\u{2713} Connected to Discord`);
 
     if (timeout && timeout > 0) {
       window.setTimeout(() => {
@@ -36,7 +36,7 @@ export class StatusBar {
       }, timeout);
     } else {
       window.setTimeout(() => {
-        this.statusBarEl.setText(`\u{1F30D}`);
+        this.statusBarEl.setText(`Discord RPC`);
       }, 5000);
     }
   }
