@@ -26,5 +26,9 @@ export enum ThemeStyle {
   Catppuccin_Latte = "latte",
   Catppuccin_Frappe = "frappe",
   Catppuccin_Macchiato = "macchiato",
-  Catppuccin_Mocha = "mocha"
+  Catppuccin_Mocha = "mocha",
+  Cyberglow_Dark = "cyberglow-dark",
+  Cyberglow_Light = "cyberglow-light",
+  Tokyo_night_Dark = "tokyo-night-dark",
+  Tokyo_night_Light = "tokyo-night-light"
 }
