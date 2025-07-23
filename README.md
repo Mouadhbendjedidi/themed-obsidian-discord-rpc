@@ -57,13 +57,7 @@ Head over to **Settings → Themed Discord RPC** to:
 
 ## How to Contribute 🤝
 
-[Check out our contributing guide](https://github.com/Mouadhbendjedidi/themed-obsidian-discord-rpc/CONTRIBUTING.md) to get started!
-
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature-name`)
-3. **Commit your changes** (`git commit -m 'Added a cool feature'`)
-4. **Push to GitHub** (`git push origin feature-name`)
-5. **Submit a Pull Request** 🚀
+well i'm working on that!
 
 ## Community & Support 💬
 
