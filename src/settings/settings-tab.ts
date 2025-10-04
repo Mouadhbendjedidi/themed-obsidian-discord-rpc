@@ -1,4 +1,4 @@
-import { PluginSettingTab, Setting, TFile, App } from "obsidian";
+import { PluginSettingTab, Setting, App } from "obsidian";
 import { Logger } from "src/logger";
 import ObsidianDiscordRPC from "src/main";
 import { ThemeStyle, PluginState } from './settings';
@@ -14,7 +14,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
   }
 
   display(): void {
-    let { containerEl } = this;
+    const { containerEl } = this;
     const plugin = this.plugin;  // Use the properly typed property instead of casting
 
     containerEl.empty();
@@ -159,7 +159,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
             );
           });
       });
-    
+
       new Setting(containerEl)
       .setName("Show connected time")
       .setDesc(
