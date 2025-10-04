@@ -85,7 +85,23 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
             );
           })
       );
+    new Setting(containerEl)
+      .setName("Show folder name")
+      .setDesc("Enable this to show the folder path where the file is located.")
+      .addToggle((boolean) =>
+        boolean
+          .setValue(plugin.settings.showFolderName)
+          .onChange((value) => {
+            plugin.settings.showFolderName = value;
+            plugin.saveData(plugin.settings);
 
+            plugin.setActivity(
+              this.app.vault.getName(),
+              plugin.currentFile.basename,
+              plugin.currentFile.extension
+            );
+          })
+      );
     new Setting(containerEl)
       .setName("Show file extension")
       .setDesc("Enable this to show file extension.")
