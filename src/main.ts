@@ -32,7 +32,7 @@ export default class ObsidianDiscordRPC extends Plugin {
   }
 
   async onload() {
-    let statusBarEl = this.addStatusBarItem();
+    const statusBarEl = this.addStatusBarItem();
     this.statusBar = new StatusBar(statusBarEl);
 
     this.settings = (await this.loadData()) || new DiscordRPCSettings();
