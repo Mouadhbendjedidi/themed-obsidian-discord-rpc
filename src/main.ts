@@ -232,7 +232,7 @@ export default class ObsidianDiscordRPC extends Plugin {
         this.settings.showCurrentFileName
       ) {
         await this.rpc.setActivity({
-          details: `Editing ${file}`,
+          details: `Editing: ${file}`,
           state: `Folder: ${folderPath}`,
           startTimestamp: date,
           largeImageKey: this.settings.themeStyle,
