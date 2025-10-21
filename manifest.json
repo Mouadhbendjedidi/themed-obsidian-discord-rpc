@@ -1,7 +1,7 @@
 {
 	"id": "themed-discord-rpc",
 	"name": "Themed Discord RPC",
-	"version": "1.1.3",
+	"version": "1.2.0",
 	"minAppVersion": "0.15.0",
 	"description": "A Customizable Discord RPC",
 	"author": "Mouadhbendjedidi",
