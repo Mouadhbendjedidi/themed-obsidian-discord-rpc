@@ -10,7 +10,7 @@ export default class ObsidianDiscordRPC extends Plugin {
   public settings: DiscordRPCSettings;
   public statusBar: StatusBar;
   public rpc: Client;
-  public logger: Logger = new Logger();
+  public logger: Logger = new Logger(this);
   public currentFile: TFile;
   public loadedTime: Date;
   public lastSetTime: Date;
@@ -32,7 +32,7 @@ export default class ObsidianDiscordRPC extends Plugin {
   }
 
   async onload() {
-    let statusBarEl = this.addStatusBarItem();
+    const statusBarEl = this.addStatusBarItem();
     this.statusBar = new StatusBar(statusBarEl);
 
     this.settings = (await this.loadData()) || new DiscordRPCSettings();
@@ -178,6 +178,14 @@ export default class ObsidianDiscordRPC extends Plugin {
         file = fileName;
       }
 
+      let folderPath = "";
+      if (this.settings.showFolderName && this.currentFile) {
+        const path = this.currentFile.parent?.path;
+        if (path && path !== "/") {
+          folderPath = path;
+        }
+      }
+
       let date: Date;
       if (this.settings.useLoadedTime) {
         date = this.loadedTime;
@@ -196,11 +204,36 @@ export default class ObsidianDiscordRPC extends Plugin {
         });
       } else if (
         this.settings.showVaultName &&
+        this.settings.showCurrentFileName &&
+        this.settings.showFolderName &&
+        folderPath
+      ) {
+        await this.rpc.setActivity({
+          details: `Editing ${file}`,
+          state: `Vault: ${vault}  ▸ ${folderPath}`,
+          startTimestamp: date,
+          largeImageKey: this.settings.themeStyle,
+          largeImageText: "I'm thinking!",
+        });
+      } else if (
+        this.settings.showVaultName &&
         this.settings.showCurrentFileName
       ) {
         await this.rpc.setActivity({
           details: `Editing ${file}`,
           state: `Vault: ${vault}`,
+          startTimestamp: date,
+          largeImageKey: this.settings.themeStyle,
+          largeImageText: "I'm thinking!",
+        });
+      } else if (
+        this.settings.showFolderName &&
+        folderPath &&
+        this.settings.showCurrentFileName
+      ) {
+        await this.rpc.setActivity({
+          details: `Editing: ${file}`,
+          state: `Folder: ${folderPath}`,
           startTimestamp: date,
           largeImageKey: this.settings.themeStyle,
           largeImageText: "I'm thinking!",

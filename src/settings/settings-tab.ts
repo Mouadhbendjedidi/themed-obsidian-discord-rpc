@@ -1,4 +1,4 @@
-import { PluginSettingTab, Setting, TFile, App } from "obsidian";
+import { PluginSettingTab, Setting, App } from "obsidian";
 import { Logger } from "src/logger";
 import ObsidianDiscordRPC from "src/main";
 import { ThemeStyle, PluginState } from './settings';
@@ -14,7 +14,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
   }
 
   display(): void {
-    let { containerEl } = this;
+    const { containerEl } = this;
     const plugin = this.plugin;  // Use the properly typed property instead of casting
 
     containerEl.empty();
@@ -67,7 +67,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         })
       );
 
-    new Setting(containerEl).setName('File name').setHeading();
+    new Setting(containerEl).setName('File & Folder Name').setHeading();
     new Setting(containerEl)
       .setName("Show current file name")
       .setDesc("Enable this to show the name of the file you are working on.")
@@ -85,7 +85,23 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
             );
           })
       );
+    new Setting(containerEl)
+      .setName("Show folder name")
+      .setDesc("Enable this to show the folder path where the file is located.")
+      .addToggle((boolean) =>
+        boolean
+          .setValue(plugin.settings.showFolderName)
+          .onChange((value) => {
+            plugin.settings.showFolderName = value;
+            plugin.saveData(plugin.settings);
 
+            plugin.setActivity(
+              this.app.vault.getName(),
+              plugin.currentFile.basename,
+              plugin.currentFile.extension
+            );
+          })
+      );
     new Setting(containerEl)
       .setName("Show file extension")
       .setDesc("Enable this to show file extension.")
@@ -143,7 +159,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
             );
           });
       });
-    
+
       new Setting(containerEl)
       .setName("Show connected time")
       .setDesc(
