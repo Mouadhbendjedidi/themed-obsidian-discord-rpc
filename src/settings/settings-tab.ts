@@ -67,7 +67,7 @@ export class DiscordRPCSettingsTab extends PluginSettingTab {
         })
       );
 
-    new Setting(containerEl).setName('File & Folder Name name').setHeading();
+    new Setting(containerEl).setName('File & Folder Name').setHeading();
     new Setting(containerEl)
       .setName("Show current file name")
       .setDesc("Enable this to show the name of the file you are working on.")
