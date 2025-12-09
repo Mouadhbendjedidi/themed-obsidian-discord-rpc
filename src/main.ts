@@ -38,14 +38,21 @@ export default class ObsidianDiscordRPC extends Plugin {
     this.settings = (await this.loadData()) || new DiscordRPCSettings();
 
     this.registerEvent(
-      this.app.workspace.on("file-open", this.onFileOpen, this)
+      this.app.workspace.on("file-open", this.onFileOpen, this),
     );
 
-    this.registerInterval(window.setInterval(async () => {
-      if (this.settings.showConnectionTimer && this.getState() == PluginState.connected){
-        this.statusBar.displayTimer(this.settings.useLoadedTime ? this.loadedTime : this.lastSetTime);
-      }
-    }, 500));
+    this.registerInterval(
+      window.setInterval(async () => {
+        if (
+          this.settings.showConnectionTimer &&
+          this.getState() == PluginState.connected
+        ) {
+          this.statusBar.displayTimer(
+            this.settings.useLoadedTime ? this.loadedTime : this.lastSetTime,
+          );
+        }
+      }, 500),
+    );
 
     this.registerDomEvent(statusBarEl, "click", async () => {
       if (this.getState() == PluginState.disconnected) {
@@ -70,24 +77,24 @@ export default class ObsidianDiscordRPC extends Plugin {
     });
 
     if (this.settings.connectOnStart) {
-      await this.connectDiscord();
+      this.connectDiscord().then(() => {
+        const activeLeaf = this.app.workspace.activeLeaf;
+        const files: TFile[] = this.app.vault.getMarkdownFiles();
 
-      const activeLeaf = this.app.workspace.activeLeaf;
-      const files: TFile[] = this.app.vault.getMarkdownFiles();
-
-      if (activeLeaf) {
-        const displayText = activeLeaf.getDisplayText();
-        files.forEach((file) => {
-          if (file.basename === displayText) {
-            this.onFileOpen(file);
-          }
-        });
-      }
+        if (activeLeaf) {
+          const displayText = activeLeaf.getDisplayText();
+          files.forEach((file) => {
+            if (file.basename === displayText) {
+              this.onFileOpen(file);
+            }
+          });
+        }
+      });
     } else {
       this.setState(PluginState.disconnected);
       this.statusBar.displayState(
         this.getState(),
-        this.settings.autoHideStatusBar
+        this.settings.autoHideStatusBar,
       );
     }
   }
@@ -98,7 +105,7 @@ export default class ObsidianDiscordRPC extends Plugin {
       await this.setActivity(
         this.app.vault.getName(),
         file.basename,
-        file.extension
+        file.extension,
       );
     }
   }
@@ -120,14 +127,14 @@ export default class ObsidianDiscordRPC extends Plugin {
     this.setState(PluginState.connecting);
     this.statusBar.displayState(
       this.getState(),
-      this.settings.autoHideStatusBar
+      this.settings.autoHideStatusBar,
     );
 
     this.rpc.once("ready", () => {
       this.setState(PluginState.connected);
       this.statusBar.displayState(
         this.getState(),
-        this.settings.autoHideStatusBar
+        this.settings.autoHideStatusBar,
       );
       this.logger.log("Connected to Discord", this.settings.showPopups);
     });
@@ -141,7 +148,7 @@ export default class ObsidianDiscordRPC extends Plugin {
       this.setState(PluginState.disconnected);
       this.statusBar.displayState(
         this.getState(),
-        this.settings.autoHideStatusBar
+        this.settings.autoHideStatusBar,
       );
       this.logger.log("Failed to connect to Discord", this.settings.showPopups);
     }
@@ -153,7 +160,7 @@ export default class ObsidianDiscordRPC extends Plugin {
     this.setState(PluginState.disconnected);
     this.statusBar.displayState(
       this.getState(),
-      this.settings.autoHideStatusBar
+      this.settings.autoHideStatusBar,
     );
     this.logger.log("Disconnected from Discord", this.settings.showPopups);
   }
@@ -161,7 +168,7 @@ export default class ObsidianDiscordRPC extends Plugin {
   async setActivity(
     vaultName: string,
     fileName: string,
-    fileExtension: string
+    fileExtension: string,
   ): Promise<void> {
     if (this.getState() === PluginState.connected) {
       let vault: string;
