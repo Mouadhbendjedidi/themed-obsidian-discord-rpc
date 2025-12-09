@@ -1,5 +1,5 @@
 import { Client } from "discord-rpc";
-import { Plugin, PluginManifest, TFile } from "obsidian";
+import { MarkdownView, Plugin, PluginManifest, TFile } from "obsidian";
 import { Logger } from "./logger";
 import { DiscordRPCSettings, PluginState } from "./settings/settings";
 import { DiscordRPCSettingsTab } from "./settings/settings-tab";
@@ -38,7 +38,7 @@ export default class ObsidianDiscordRPC extends Plugin {
     this.settings = (await this.loadData()) || new DiscordRPCSettings();
 
     this.registerEvent(
-      this.app.workspace.on("file-open", this.onFileOpen, this),
+      this.app.workspace.on("file-open", this.onFileOpen, this)
     );
 
     this.registerInterval(
@@ -78,11 +78,12 @@ export default class ObsidianDiscordRPC extends Plugin {
 
     if (this.settings.connectOnStart) {
       this.connectDiscord().then(() => {
-        const activeLeaf = this.app.workspace.activeLeaf;
+
+        let view = this.app.workspace.getActiveViewOfType(MarkdownView);
         const files: TFile[] = this.app.vault.getMarkdownFiles();
 
-        if (activeLeaf) {
-          const displayText = activeLeaf.getDisplayText();
+        if (view) {
+          const displayText = view.getDisplayText();
           files.forEach((file) => {
             if (file.basename === displayText) {
               this.onFileOpen(file);
@@ -94,7 +95,7 @@ export default class ObsidianDiscordRPC extends Plugin {
       this.setState(PluginState.disconnected);
       this.statusBar.displayState(
         this.getState(),
-        this.settings.autoHideStatusBar,
+        this.settings.autoHideStatusBar
       );
     }
   }
@@ -105,7 +106,7 @@ export default class ObsidianDiscordRPC extends Plugin {
       await this.setActivity(
         this.app.vault.getName(),
         file.basename,
-        file.extension,
+        file.extension
       );
     }
   }
@@ -127,14 +128,14 @@ export default class ObsidianDiscordRPC extends Plugin {
     this.setState(PluginState.connecting);
     this.statusBar.displayState(
       this.getState(),
-      this.settings.autoHideStatusBar,
+      this.settings.autoHideStatusBar
     );
 
     this.rpc.once("ready", () => {
       this.setState(PluginState.connected);
       this.statusBar.displayState(
         this.getState(),
-        this.settings.autoHideStatusBar,
+        this.settings.autoHideStatusBar
       );
       this.logger.log("Connected to Discord", this.settings.showPopups);
     });
@@ -148,7 +149,7 @@ export default class ObsidianDiscordRPC extends Plugin {
       this.setState(PluginState.disconnected);
       this.statusBar.displayState(
         this.getState(),
-        this.settings.autoHideStatusBar,
+        this.settings.autoHideStatusBar
       );
       this.logger.log("Failed to connect to Discord", this.settings.showPopups);
     }
@@ -160,7 +161,7 @@ export default class ObsidianDiscordRPC extends Plugin {
     this.setState(PluginState.disconnected);
     this.statusBar.displayState(
       this.getState(),
-      this.settings.autoHideStatusBar,
+      this.settings.autoHideStatusBar
     );
     this.logger.log("Disconnected from Discord", this.settings.showPopups);
   }
@@ -168,7 +169,7 @@ export default class ObsidianDiscordRPC extends Plugin {
   async setActivity(
     vaultName: string,
     fileName: string,
-    fileExtension: string,
+    fileExtension: string
   ): Promise<void> {
     if (this.getState() === PluginState.connected) {
       let vault: string;
