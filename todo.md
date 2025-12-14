@@ -13,3 +13,8 @@
 - [ ] Abate
 - [ ] Abecedarium
 - [ ] AbsoluteGruv, material gruvbox, obsidian gruvbox
+
+### what's missing?:
+- [ ] README recreation
+- [ ] CONTRIBUTING.md creation
+- [ ] Issues and pull request templates
