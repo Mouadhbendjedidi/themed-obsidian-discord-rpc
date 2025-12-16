@@ -1,5 +1,5 @@
 import { Client } from "discord-rpc";
-import { Plugin, PluginManifest, TFile } from "obsidian";
+import { MarkdownView, Plugin, PluginManifest, TFile } from "obsidian";
 import { Logger } from "./logger";
 import { DiscordRPCSettings, PluginState } from "./settings/settings";
 import { DiscordRPCSettingsTab } from "./settings/settings-tab";
@@ -41,11 +41,18 @@ export default class ObsidianDiscordRPC extends Plugin {
       this.app.workspace.on("file-open", this.onFileOpen, this)
     );
 
-    this.registerInterval(window.setInterval(async () => {
-      if (this.settings.showConnectionTimer && this.getState() == PluginState.connected){
-        this.statusBar.displayTimer(this.settings.useLoadedTime ? this.loadedTime : this.lastSetTime);
-      }
-    }, 500));
+    this.registerInterval(
+      window.setInterval(async () => {
+        if (
+          this.settings.showConnectionTimer &&
+          this.getState() == PluginState.connected
+        ) {
+          this.statusBar.displayTimer(
+            this.settings.useLoadedTime ? this.loadedTime : this.lastSetTime,
+          );
+        }
+      }, 500),
+    );
 
     this.registerDomEvent(statusBarEl, "click", async () => {
       if (this.getState() == PluginState.disconnected) {
@@ -70,19 +77,20 @@ export default class ObsidianDiscordRPC extends Plugin {
     });
 
     if (this.settings.connectOnStart) {
-      await this.connectDiscord();
+      this.connectDiscord().then(() => {
 
-      const activeLeaf = this.app.workspace.activeLeaf;
-      const files: TFile[] = this.app.vault.getMarkdownFiles();
+        let view = this.app.workspace.getActiveViewOfType(MarkdownView);
+        const files: TFile[] = this.app.vault.getMarkdownFiles();
 
-      if (activeLeaf) {
-        const displayText = activeLeaf.getDisplayText();
-        files.forEach((file) => {
-          if (file.basename === displayText) {
-            this.onFileOpen(file);
-          }
-        });
-      }
+        if (view) {
+          const displayText = view.getDisplayText();
+          files.forEach((file) => {
+            if (file.basename === displayText) {
+              this.onFileOpen(file);
+            }
+          });
+        }
+      });
     } else {
       this.setState(PluginState.disconnected);
       this.statusBar.displayState(
