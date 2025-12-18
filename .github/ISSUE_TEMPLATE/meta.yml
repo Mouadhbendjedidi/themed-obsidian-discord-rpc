@@ -1,0 +1,17 @@
+name: Meta Issue
+description: Report your issues with the repository here!
+labels: [meta]
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue outlining your problem?
+      description: Please search to see if an issue already exists for your problem.
+      options:
+        - label: I have searched the existing issues and they do not solve my problem.
+          required: true
+  - type: textarea
+    attributes:
+      label: Describe your issue.
+      description: "Issues relating to a feature should be raised as a [Feature](https://github.com/mouadhbendjedidi/themed-obsidian-discord-rpc/issues/new?assignees=&labels=&template=feature.yml) instead."
+    validations:
+      required: true
