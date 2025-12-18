@@ -8,14 +8,7 @@ This project aims to provide a customizable and theme-aware Discord Rich Presenc
 
 ### 💡 Feature Requests
 
-If you have an idea or improvement in mind:
-
-* Check existing issues first to avoid duplicates
-* Clearly describe the feature and why it is useful
-* Include mockups or examples if possible
-
----
-
+If you have an idea or improvement in mind just choose Requesting a feature on [Issues](https://github.com/mouadhbendjedidi/themed-obsidian-discord-rpc/issues)
 ### 🧩 Code Contributions
 
 #### Getting Started
@@ -36,7 +29,6 @@ If you have an idea or improvement in mind:
 
 * Keep your changes focused and minimal
 * Follow the existing code structure and style
-* Prefer clarity over cleverness
 
 #### Commit Guidelines
 
