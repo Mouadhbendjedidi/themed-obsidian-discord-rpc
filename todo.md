@@ -16,5 +16,5 @@
 
 ### what's missing?:
 - [X] README recreation
-- [ ] CONTRIBUTING.md creation
+- [X] CONTRIBUTING.md creation
 - [ ] Issues and pull request templates
