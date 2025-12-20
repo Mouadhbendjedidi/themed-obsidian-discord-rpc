@@ -1,0 +1,17 @@
+name: Feature Request
+description: Propose a Feature to add it in the plugin
+labels: [feature]
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing Feature Request?
+      description: Please search to see if a feature is already requested.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    attributes:
+      label: Describe your feature.
+      description: "Issues relating to a feature should be raised as a [Feature](https://github.com/mouadhbendjedidi/themed-obsidian-discord-rpc/issues/new?assignees=&labels=&template=feature.yml) instead."
+    validations:
+      required: true
