@@ -18,3 +18,5 @@
 - [X] README recreation
 - [X] CONTRIBUTING.md creation
 - [ ] Issues and pull request templates
+    - [X] Issues
+    - [ ] Pull Request
